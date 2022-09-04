@@ -7,15 +7,17 @@ from files.teams import *
         
 
 # Load all matches
+# Download latest from https://data.fivethirtyeight.com/ 
+# -> download icon besides soccer-spi -> replace matches.csv with spi_matches.csv
 df = pd.read_csv('matches.csv', index_col=None)
 
 
 # Variables
-df = df[df['season'] == 2022]
-date_current = dt.datetime(2022,8,24)
-rounds = 1
-decimals = 1e2
-league = 0  # 0=PremierLeague, 1=Superliga
+df = df[df['season'] == 2022]           # 2022 = 2022/23
+date_current = dt.datetime(2022,8,24)   # Start date - Select data < and not <= 
+rounds = 1                              # Number of rounds ahead of selected date
+decimals = 1e2                          # Number of decimals shown in results
+league = 0                              # 0=PremierLeague, 1=Superliga
 
 
 # Strip data
